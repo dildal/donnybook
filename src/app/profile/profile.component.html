@@ -1,0 +1,15 @@
+<h1>{{profile.name}}</h1>
+	<!-- shows the posts when the user is not logged in -->
+	<div class="post" *ngFor="let post of posts">
+		<p>{{post.title}} - {{post.content}}</p>
+	</div>
+	
+	<!-- Does not show the posts title or content -->
+	<div class="post" *ngFor="let post of posts">
+		<p>{{post.title}} - {{post.content}}</p>
+		<div  *ngIf="owner(post)">
+			<button (click)="edit(post)">Edit</button>
+			<button  (click)="delete(post)">Delete</button>
+		</div>
+	</div>
+<new-post-form *ngIf="auth.isLoggedIn() && auth.getUserDetails()._id === id" (postCreated)="addPost($event)"></new-post-form>

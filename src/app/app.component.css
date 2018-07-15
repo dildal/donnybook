@@ -1,0 +1,23 @@
+.navlink{
+	float: right;
+	display: inline-block;
+	padding: 1rem;
+}
+
+.brand{
+	display: inline-block;
+	padding-top: 1rem;
+	float: left;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul::after {
+	content: "";
+	clear: both;
+	overflow: hidden;
+	display: block;
+}
